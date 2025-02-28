@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
+const useRouter = require("./routes/userRoutes");
+
+app.use(express.json());
+
 mongoose.connect(process.env.URI).then(() => {
     console.log("Connected succesfully");
 
@@ -16,6 +20,6 @@ mongoose.connect(process.env.URI).then(() => {
     console.log("error", error);
 });
 
-app.get("/",(req,res) => {
-    res.send("Api is running");
-})
+app.use(useRouter);
+
+
