@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-
+import {useNavigate} from "react-router-dom";
 
 const Create = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
 
+  const navigate = useNavigate();
+
+  //This function is responsible for sending user data from React to the backend (Express + MongoDB)
   const handleSubmit = async (e)=>{
 
     e.preventDefault();
@@ -32,6 +35,7 @@ const Create = () => {
         setAge("");
         setEmail("");
         setName("");
+        navigate("/all");
     }
 
   }
@@ -39,7 +43,7 @@ const Create = () => {
   return (
     <div className="container my-2">
       <h2 className="text-center">Enter the data</h2>
-
+ 
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Name</label>
