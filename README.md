@@ -1,0 +1,1 @@
+A basic MERN stack application is a web application built using four technologies: MongoDB (a NoSQL database), Express (a Node.js web framework), React (a front-end JavaScript library), and Node.js (a JavaScript runtime). This type of application allows developers to build dynamic and responsive websites or web applications with a powerful back-end and an interactive front-end. 
